@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THWIP!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header class="header-section">
+        <div class="title-container">
+            <h1 id="main-title">THWIP!!</h1>
+            <p id="main-subtitle">> Make your OWN wearable HID_</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <section class="intro-box glass-panel">
+            <h2>Control the Web. Literally.</h2>
+            <p>THWIP!! is a You Ship, We Ship (YSWS) for teenagers to build a custom, wearable controller. You design the circuit, write the code, and submit your project. Once approved, we ship you the hardware kit for FREE so you can build it in real life!</p>
+        </section>
+
+        <h2 class="section-title">// The Challenge & The Kit</h2>
+        <div class="kit-box glass-panel">
+            <h3>What You'll Build</h3>
+            <p>Your mission is to build an open-source wearable HID that controls your computer in any way you like using your hand movements. Once your design and code is approved, we'll send you the hardware kit to bring it to life.</p>
+            
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="esp32-c3.jpg" alt="Seeed Studio XIAO ESP32-C3" class="scattered-img img-mcu">
+                    <p>XIAO ESP32-C3</p>
+                </div>
+                <div class="component-item">
+                    <img src="MPU6050 Module.jpg" alt="MPU6050 IMU" class="scattered-img img-imu">
+                    <p>MPU6050 Sensor</p>
+                </div>
+                <div class="component-item">
+                    <img src="tinybreadboard.jpg" alt="Tiny Breadboard" class="scattered-img img-breadboard">
+                    <p>Tiny Breadboard</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">What You'll Have (Extra Components)</h3>
+            <p>Along with the microcontroller and the accelerometer, your kit will come with extra hardware. You must incorporate at least two of these extra components into your final build for your project to be approved.</p>
+            
+            <div class="component-grid">
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 1" class="scattered-img" style="transform: rotate(4deg);">
+                    <p>[TBD Component 1]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 2" class="scattered-img" style="transform: rotate(-3deg);">
+                    <p>[TBD Component 2]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 3" class="scattered-img" style="transform: rotate(7deg);">
+                    <p>[TBD Component 3]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 4" class="scattered-img" style="transform: rotate(-6deg);">
+                    <p>[TBD Component 4]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 1" class="scattered-img" style="transform: rotate(4deg);">
+                    <p>[TBD Component 5]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 2" class="scattered-img" style="transform: rotate(-3deg);">
+                    <p>[TBD Component maybe 6?]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 3" class="scattered-img" style="transform: rotate(7deg);">
+                    <p>[TBD Component maybe 7?]</p>
+                </div>
+                <div class="component-item">
+                    <img src="images/placeholder-extra.svg" alt="TBD Component 4" class="scattered-img" style="transform: rotate(-6deg);">
+                    <p>[TBD Component maybe 8?]</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px;">Design TBD[a custom 3D-printed] or strap it to your wrist, plug in the USB-C cable, and write the logic to translate your hand movements into keyboard/mouse macros. Ship the final design project to get your own THWIP!! kit!</p>
+        </div>
+
+        <h2 class="section-title">// How to Build & Ship</h2>
+        <div class="steps-container">
+            <div class="step-card glass-panel">
+                <div class="step-number">-1</div>
+                <div class="step-content">
+                    <h3>Design</h3>
+                    <p>Route your wiring diagram and program. Ask for help at #THWIP on Slack.</p>
+                </div>
+            </div>
+            
+            <div class="step-card glass-panel">
+                <div class="step-number">-2</div>
+                <div class="step-content">
+                    <h3>Ship it!</h3>
+                    <p>Submit your repository with a breakdown of your design. We'll review it, and if everything looks solid, we'll ship your THWIP!! hardware kit right to your door.</p>
+                </div>
+            </div>
+
+            <div class="step-card glass-panel">
+                <div class="step-number">-3</div>
+                <div class="step-content">
+                    <h3>Build</h3>
+                    <p>Get your package in the mail! Wire the MPU6050 and your extra components to your XIAO ESP32-C3 using the tiny breadboard to test it, or directly solder it if you're super sure it works! Upload your code and strap it to your wrist.</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-container">
+            <div class="faq-item glass-panel">
+                <h4>What exactly is an HID?</h4>
+                <p>HID stands for Human Interface Device. It's the standard USB protocol that keyboards, mice, and gamepads use to talk to a computer. Because the XIAO ESP32-C3 supports native USB, you can program it to act exactly like a standard keyboard or mouse—no extra drivers needed!</p>
+            </div>
+            <div class="faq-item glass-panel">
+                <h4>All this, for free?!</h4>
+                <p>Yes! If your initial design and code get approved, we'll send you the core hardware kit completely free. In exchange, you have to assemble it, document your code, and ship your final high-quality project.</p>
+            </div>
+            <div class="faq-item glass-panel">
+                <h4>Are there any requirements to get approved?</h4>
+                <p>For your project to be considered for approval, <span class="required">you'll need to add at least two extra components from the THWIP!! kit into your design</span>, otherwise it will be rejected. But don't worry, you'll still have the opportunity to resubmit again once you update it!</p>
+            </div>
+            <div class="faq-item glass-panel">
+                <h4>Can I map the gestures to do anything?</h4>
+                <p>Because it acts as a standard USB HID, the computer thinks it's a keyboard and mouse. You can code a wrist flick to be "Scroll Down", or to be "Left Click", or an insanely complex keyboard macro.</p>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+        <p>Built by Alonso. Designed for the web.</p>
+    </footer>
+
+    <audio id="click-sound" src="audio/thwip.mp3"></audio>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            // 1. Audio
+            let sound = document.getElementById('click-sound');
+            if (sound) {
+                sound.volume = 0.2; 
+                sound.currentTime = 0; 
+                sound.play().catch(e => {}); 
+            }
+
+            // 2. Floating Text
+            let text = document.createElement('span');
+            text.innerText = '*thwip!*';
+            text.className = 'click-text';
+            text.style.left = (e.pageX + 15) + 'px';
+            text.style.top = (e.pageY - 15) + 'px';
+            document.body.appendChild(text);
+
+            setTimeout(() => { text.remove(); }, 800);
+        });
+    </script>
+
+</body>
+</html>

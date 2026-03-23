@@ -1,0 +1,354 @@
+/* Color Palette & Variables */
+:root {
+  --mat-blue: #112240; /* Deeper, richer ALVIN blue */
+  --mat-grid: rgba(255, 255, 255, 0.08);
+  --neon-cyan: #00f0ff; /* Blueprint accent */
+  --neon-green: #10b981; /* Hacker accent */
+  --acrylic-bg: rgba(10, 25, 47, 0.7); /* Translucent dark blue */
+  --text-main: #ccd6f6;
+  --text-bright: #e6f1ff;
+}
+
+/* Base Body Setup - Deep Blue Mat + Technical Cursor */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--mat-blue); 
+  background-image: 
+    linear-gradient(var(--mat-grid) 2px, transparent 1px),
+    linear-gradient(90deg, var(--mat-grid) 2px, transparent 1px);
+  background-size: 40px 40px; 
+  font-family: 'Space Mono', monospace;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  cursor: crosshair; /* Technical drafting cursor! */
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4 {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text-bright);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Header Section */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh; 
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.title-container {
+  margin-bottom: 40px;
+  z-index: 2;
+}
+
+#main-title {
+  font-size: 6em;
+  color: #ffffff;
+  text-shadow: 0 0 10px var(--neon-cyan), 4px 4px 0px rgba(0,0,0,0.8);
+  letter-spacing: 4px;
+  margin: 0 0 10px 0;
+}
+
+#main-subtitle {
+  font-size: 1.2rem;
+  color: var(--neon-green);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border: 1px solid var(--neon-green);
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Hero Image (Your CRT Monitor) */
+#hero-image {
+  width: 450px; /* Made it bigger since it's an awesome illustration */
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  /* Glowing drop shadow to make it pop off the mat */
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.8)) drop-shadow(0px 0px 15px rgba(0, 240, 255, 0.3)); 
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Main Container */
+.container {
+  flex: 1;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* --- THE "BOTH" MAGIC: ACRYLIC + BLUEPRINT PANELS --- */
+.glass-panel {
+  background: var(--acrylic-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-top: 1px solid rgba(0, 240, 255, 0.5); /* Highlight edge */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 4px; /* Sharper corners for a technical look */
+  padding: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faint blueprint grid INSIDE the acrylic panels */
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Technical Corner Brackets */
+.glass-panel::after {
+  content: "";
+  position: absolute;
+  top: 5px; left: 5px; right: 5px; bottom: 5px;
+  border: 1px solid transparent;
+  background: 
+    linear-gradient(to right, var(--neon-cyan) 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, var(--neon-cyan) 2px, transparent 2px) 0 0,
+    linear-gradient(to left, var(--neon-cyan) 2px, transparent 2px) 100% 0,
+    linear-gradient(to bottom, var(--neon-cyan) 2px, transparent 2px) 100% 0,
+    linear-gradient(to right, var(--neon-cyan) 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, var(--neon-cyan) 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, var(--neon-cyan) 2px, transparent 2px) 100% 100%,
+    linear-gradient(to top, var(--neon-cyan) 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  pointer-events: none;
+}
+
+/* Intro Box Specifics */
+.intro-box {
+  text-align: center;
+  border-left: 4px solid var(--neon-cyan);
+}
+.intro-box h2 {
+  font-size: 2.2em;
+  color: var(--neon-cyan);
+  margin-bottom: 15px;
+}
+.intro-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: left;
+  font-size: 2em;
+  color: var(--neon-green);
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  margin-top: 20px;
+  border-bottom: 1px dashed var(--neon-green);
+  padding-bottom: 10px;
+}
+
+/* Kit Box */
+.kit-box h3 {
+  font-size: 1.8em;
+  color: var(--text-bright);
+  margin-bottom: 20px;
+}
+.kit-box p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+/* Component Grid */
+.component-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  gap: 20px;
+}
+.component-item {
+  text-align: center;
+  width: 150px;
+}
+.component-item p {
+  color: var(--neon-cyan);
+  font-size: 0.85rem;
+  margin-top: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border: 1px dashed var(--neon-cyan);
+}
+
+/* Scattered Image Rotations */
+.scattered-img {
+  width: 120px;
+  height: 120px;
+  background-color: #0a1122;
+  border: 2px solid #334155;
+  border-radius: 4px;
+  padding: 10px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.6);
+}
+
+.img-mcu { transform: rotate(-6deg); }
+.img-imu { transform: rotate(8deg); }
+.img-breadboard { transform: rotate(-3deg); }
+
+.scattered-img:hover {
+  transform: rotate(0deg) scale(1.15) !important;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  z-index: 10;
+}
+
+/* Steps Pipeline Container */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.step-card {
+  display: flex;
+  padding: 30px 30px 30px 90px; 
+  align-items: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.step-card:hover {
+  border-color: var(--neon-cyan);
+  transform: translateX(5px);
+}
+
+.step-content {
+  flex: 1;
+}
+
+/* Technical Step Numbers */
+.step-number {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--mat-blue);
+  color: var(--neon-cyan);
+  font-size: 1.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  border-radius: 0; /* Square/Technical look */
+}
+
+.step-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--neon-green);
+}
+.step-card p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .step-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px 20px 20px;
+  }
+  .step-number {
+    left: 20px;
+    top: -25px;
+    transform: none;
+  }
+}
+
+/* FAQ Container */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  padding: 25px;
+  border-left: 4px solid #475569;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--neon-cyan);
+  background: rgba(10, 25, 47, 0.9);
+}
+
+.faq-item h4 {
+  font-size: 1.2em;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #0a1122;
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Floating Click Text Animation */
+.click-text {
+  position: absolute;
+  color: var(--neon-cyan); 
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px var(--neon-cyan);
+  pointer-events: none;
+  animation: floatUp 0.8s ease-out forwards;
+  z-index: 1000;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-40px) scale(1.5); }
+}
